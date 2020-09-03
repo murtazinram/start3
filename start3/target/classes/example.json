@@ -1,0 +1,127 @@
+[
+  {
+    "class": "Trial",
+    "args": {
+      "account": "ivanov",
+      "mark1": -40,
+      "mark2": 60
+    }
+  },
+  {
+    "class": "LightTrial",
+    "args": {
+      "account": "petrov",
+      "mark1": 70,
+      "mark2": 40
+    }
+  },
+  {
+    "class": "StrongTrial",
+    "args": {
+      "account": "zelenskiy",
+      "mark1": 35,
+      "mark2": 90
+    }
+  },
+  {
+    "class": "ExtraTrial",
+    "args": {
+      "account": null,
+      "mark1": 50,
+      "mark2": 75,
+      "mark3": 35
+    }
+  },
+  {
+    "class": "Trial",
+    "args": {
+      "account": "trump",
+      "mark1": -80,
+      "mark2": 200
+    }
+  },
+  {
+    "class": "StrongTrial",
+    "args": {
+      "account": "lukashenko",
+      "mark1": 10,
+      "mark2": 70,
+      "mark3": 100
+    }
+  },
+  {
+    "class": "LightTrial",
+    "args": {
+      "account": "putin",
+      "mark1": 80,
+      "mark2": -65
+    }
+  },
+  {
+    "class": "ExtraTrial",
+    "args": {
+      "account": "merkel",
+      "mark1": 30,
+      "mark2": 25,
+      "mark3": -35
+    }
+  },
+  {
+    "class": "ExtraTrial",
+    "args": {
+      "account": "obama",
+      "mark1": 50,
+      "mark2": 55,
+      "mark3": 55
+    }
+  },
+  {
+    "class": "Tri",
+    "args": {
+      "account": "lyapis",
+      "mark1": 40,
+      "mark2": 60
+    }
+  },
+  {
+    "class": "ExtraTrial",
+    "args": {
+      "account": "churchill",
+      "mark1": 10,
+      "mark2": 5,
+      "mark3": 5
+    }
+  },
+  {
+    "class": "StrongTrial",
+    "args": {
+      "account": "Dieneries",
+      "mark1": 10,
+      "mark2": 5,
+      "mark3": 5,
+      "mark4": 5
+    }
+  },
+  {
+    "class": "StrongTrial",
+    "args": {
+    }
+  },
+  {
+    "class": "LightTrial",
+    "args": {
+      "account": "King",
+      "mark1": 10,
+      "mark2": 50,
+      "mark3": 56
+    }
+  },
+  {
+    "class": "Trial",
+    "args": {
+      "account": "Artur",
+      "mark1": 90,
+      "mark2": 50
+    }
+  }
+]

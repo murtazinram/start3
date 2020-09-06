@@ -8,7 +8,7 @@ import com.google.gson.JsonObject;
 import java.util.Objects;
 
 public class TrialValidator {
-    private int SIZE_ARGS = 3;
+    private static final int SIZE_ARGS = 3;
     private final Trial trial;
 
     public TrialValidator(Trial trial) {
@@ -23,19 +23,22 @@ public class TrialValidator {
         return account.getAsString();
     }
 
-    public Trial getValidTrial(JsonElement element) {
-        JsonObject args = element.getAsJsonObject();
-        if (args.size() < SIZE_ARGS) {
-            throw new WrongArgumentsException("too less args on: ", args);
-        }
-        setFields(args);
+    public Trial getValidTrial(JsonObject jsonObject) {
+        checkArgsAndSet(jsonObject, SIZE_ARGS, trial);
         return trial.getCopy();
     }
 
-    protected void setFields(JsonObject args) {
-        trial.setAccount(checkAccount(args));
-        trial.setMark1(checkMark(args.get("mark1").getAsInt()));
-        trial.setMark2(checkMark(args.get("mark2").getAsInt()));
+    protected void checkArgsAndSet(JsonObject jsonObject, int SIZE_ARGS, Trial trial) {
+        if (jsonObject.size() < SIZE_ARGS) {
+            throw new WrongArgumentsException("too less jsonObject on: ", jsonObject);
+        }
+        setFields(jsonObject, trial);
+    }
+
+    protected void setFields(JsonObject jsonObject, Trial trial) {
+        trial.setAccount(checkAccount(jsonObject));
+        trial.setMark1(checkMark(jsonObject.get("mark1").getAsInt()));
+        trial.setMark2(checkMark(jsonObject.get("mark2").getAsInt()));
     }
 
     protected int checkMark(int mark) {

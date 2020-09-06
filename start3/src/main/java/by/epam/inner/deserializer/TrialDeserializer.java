@@ -10,6 +10,7 @@ import by.epam.inner.validators.TrialValidator;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import org.apache.log4j.Logger;
 
 import java.lang.reflect.Type;
@@ -25,7 +26,7 @@ public class TrialDeserializer implements JsonDeserializer<Optional<Trial>> {
             String trialKind = arr[arr.length - 1]
                     .replaceAll("([a-z])([A-Z]+)", "$1_$2")
                     .toUpperCase();
-            return Optional.of(TrialKind.valueOf(trialKind).getTrial(jsonElement));
+            return Optional.of(TrialKind.valueOf(trialKind).getTrial(jsonElement.getAsJsonObject()));
         } catch (WrongArgumentsException e) {
             LOGGER.error("Error line => " + jsonElement, e);
             return Optional.empty();
@@ -43,8 +44,8 @@ public class TrialDeserializer implements JsonDeserializer<Optional<Trial>> {
             this.validator = validator;
         }
 
-        Trial getTrial(JsonElement element) {
-            return validator.getValidTrial(element);
+        Trial getTrial(JsonObject jsonObject) {
+            return validator.getValidTrial(jsonObject);
         }
     }
 }
